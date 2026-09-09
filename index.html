@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17120d">
+<meta name="description" content="Hidromiel: guía práctica, recetas, trucos y cuaderno de elaboración.">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>Hidromiel · guía y cuaderno</title>
+<style>
+:root{--bg:#17120d;--card:#211a13;--card2:#2a2118;--text:#f7ecd7;--muted:#bcae98;--h:#e5a62b;--h2:#ffd36b;--ok:#8faa70;--bad:#cf7057;--line:#3a2d20;--r:18px;--sans:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;--serif:Georgia,serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 90% -10%,#3a2812 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.55 var(--sans);padding-bottom:84px}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(780px,100%);margin:auto;padding:14px 16px 28px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 0 18px}.brand{display:flex;align-items:center;gap:10px}.brand-mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,var(--h2),var(--h));display:grid;place-items:center;color:#2b1a08;font-size:22px;box-shadow:0 8px 24px #0005}.brand strong{font-family:var(--serif);font-size:1.25rem}.brand small{display:block;color:var(--muted)}
+.view{display:none}.view.active{display:block}.hero{padding:10px 2px 10px}.eyebrow{color:var(--h);font-size:.72rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}.hero h1{font:600 clamp(2.05rem,8vw,3.2rem)/1.03 var(--serif);margin:7px 0}.hero p{color:var(--muted);max-width:650px;font-size:1.02rem}
+.grid{display:grid;gap:12px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:linear-gradient(145deg,var(--card),#1c160f);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:0 8px 26px #0002}.card h2,.card h3{font-family:var(--serif);margin:0 0 7px}.card h2{font-size:1.25rem}.muted{color:var(--muted)}.accent{color:var(--h)}.kpi{font-size:1.8rem;font-weight:800}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}.quick button{min-height:82px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:16px;padding:10px;font-weight:750}.quick button b{display:block;font-size:1.45rem;color:var(--h);margin-bottom:2px}
+.btn{border:0;border-radius:13px;padding:11px 15px;background:linear-gradient(145deg,var(--h2),var(--h));color:#2b1a08;font-weight:800}.btn.ghost{background:transparent;color:var(--h);border:1px solid var(--h)}.btn.danger{background:transparent;color:var(--bad);border:1px solid var(--bad)}.btn.sm{padding:8px 11px;font-size:.82rem;border-radius:11px}.btn-row{display:flex;gap:8px;flex-wrap:wrap}
+.chips{display:flex;gap:7px;overflow:auto;padding:2px 0 7px;scrollbar-width:none}.chip{border:1px solid var(--line);background:var(--card2);color:var(--muted);border-radius:999px;padding:8px 12px;white-space:nowrap}.chip.active{color:#24170a;background:var(--h);border-color:var(--h)}
+.recipe{position:relative}.recipe .top{display:flex;justify-content:space-between;gap:12px}.tag{display:inline-block;color:var(--h);font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.06em}.recipe h3{font-size:1.18rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.pill{font-size:.75rem;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}
+details{border-top:1px solid var(--line);margin-top:12px;padding-top:10px}summary{cursor:pointer;font-weight:750;color:var(--h)}ul{padding-left:1.15rem;color:var(--muted)}li{margin:5px 0}
+.tip{border-left:3px solid var(--h);padding:10px 12px;background:#2a2118aa;border-radius:0 12px 12px 0;margin:10px 0}.warning{border-left-color:var(--bad)}
+.form{display:grid;gap:11px}.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}label{display:grid;gap:5px;color:var(--muted);font-size:.82rem}input,select,textarea{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:11px;color:var(--text);padding:10px}textarea{min-height:82px;resize:vertical}.error{color:var(--bad);font-size:.82rem;min-height:1.1em}
+.lot{margin-bottom:12px}.lot-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.lot-name{font:700 1.15rem var(--serif);color:var(--h)}.status{font-size:.72rem;padding:5px 9px;border-radius:999px;background:#2d261d;color:var(--muted);border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0}.stat{background:var(--card2);border-radius:11px;padding:8px}.stat b{display:block;font-size:.95rem}.stat small{color:var(--muted);font-size:.7rem}
+.bar{height:7px;background:#33291e;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--h),var(--h2));border-radius:inherit}.timeline{margin:12px 0;border-left:2px solid var(--line);padding-left:13px}.event{position:relative;padding:4px 0 11px;color:var(--muted)}.event:before{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--h);left:-18px;top:10px}.event b{color:var(--text)}
+.measure-list{display:grid;gap:7px}.measure{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:7px 0}.empty{text-align:center;padding:36px 12px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;padding:16px;z-index:20}.modal.open{display:grid}.modal .card{width:min(700px,100%);max-height:91vh;overflow:auto}
+.photo{width:76px;height:76px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}.photo-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+nav{position:fixed;z-index:10;bottom:0;left:0;right:0;background:#1e1711ee;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;justify-content:center;padding:8px 5px calc(8px + env(safe-area-inset-bottom))}nav button{border:0;background:transparent;color:var(--muted);padding:7px 6px;min-width:64px;font-size:.68rem}nav button.active{color:var(--h)}nav button span{display:block;font-size:1.18rem;margin-bottom:1px}
+@media(max-width:540px){.grid2,.row{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand"><div class="brand-mark">🍯</div><div><strong>Hidromiel</strong><small>Guía · recetas · cuaderno</small></div></div><button class="btn sm ghost" id="install" hidden>Instalar</button></header>
+
+<section class="view active" id="view-inicio">
+<div class="hero"><span class="eyebrow">Cuaderno del elaborador</span><h1>Hazlo sencillo.<br>Hazlo bien.</h1><p>Una guía cercana para aprender, experimentar y guardar lo que ocurre en cada lote.</p></div>
+<div class="quick"><button data-go="recetas"><b>🍯</b>Recetas</button><button data-go="consejos"><b>💡</b>Trucos</button><button data-go="lotes"><b>🧪</b>Mis lotes</button></div>
+<div class="grid grid2"><div class="card"><span class="tag">Idea clave</span><h2>La densidad manda</h2><p class="muted">Las burbujas orientan. La SG te permite seguir mejor la evolución de la fermentación.</p></div><div class="card"><span class="tag">Regla de oro</span><h2>Limpio · estable · paciente</h2><p class="muted">Higiene, temperatura razonable y tiempo suelen valer más que intervenir continuamente.</p></div></div>
+<div class="card" style="margin-top:12px"><h2>Ruta rápida</h2><div class="timeline"><div class="event"><b>1 · Preparar</b><br>Sanitiza y registra volumen e ingredientes.</div><div class="event"><b>2 · Medir</b><br>Anota OG y temperatura.</div><div class="event"><b>3 · Fermentar</b><br>Registra SG y condiciones.</div><div class="event"><b>4 · Clarificar</b><br>Deja que el proceso avance antes de trasvasar.</div><div class="event"><b>5 · Embotellar</b><br>Comprueba estabilidad antes de embotellar.</div></div></div>
+</section>
+
+<section class="view" id="view-tutorial"><div class="hero"><span class="eyebrow">Aprender haciendo</span><h1>Guía práctica</h1><p>Los fundamentos explicados sin complicarlo más de la cuenta.</p></div><div id="tutorial-list"></div></section>
+<section class="view" id="view-recetas"><div class="hero"><span class="eyebrow">Biblioteca</span><h1>Recetas</h1><p>Elige una base y cambia una variable cada vez. Así aprendes qué aporta cada decisión.</p></div><div class="chips" id="recipe-filters"></div><div id="recipes-list"></div></section>
+<section class="view" id="view-consejos"><div class="hero"><span class="eyebrow">Experiencia útil</span><h1>Trucos y problemas</h1><p>Consejos prácticos para interpretar lo que ves antes de tocar el lote.</p></div><div id="tips-list"></div></section>
+<section class="view" id="view-lotes"><div class="hero"><span class="eyebrow">Tu historial</span><h1>Mis lotes</h1><p>Ingredientes, mediciones, proceso, fotos y cata. Todo queda en este dispositivo.</p></div><div class="btn-row" style="margin-bottom:12px"><button class="btn" id="new-lot">+ Nuevo lote</button><button class="btn ghost" id="backup">Copia completa</button><label class="btn ghost"><input id="restore" type="file" accept="application/json" hidden>Restaurar</label></div><div id="lot-form" class="card" hidden></div><div id="lots-list"></div></section>
+<footer class="muted" style="padding:20px 2px;font-size:.78rem">Privacidad: los lotes y fotos se guardan localmente en este dispositivo. La aplicación no necesita una cuenta.</footer>
+</div>
+<nav aria-label="Navegación"><button data-go="inicio"><span>⌂</span>Inicio</button><button data-go="tutorial"><span>📖</span>Guía</button><button data-go="recetas"><span>🍯</span>Recetas</button><button data-go="consejos"><span>💡</span>Trucos</button><button data-go="lotes"><span>🧪</span>Lotes</button></nav>
+<div id="modal" class="modal"><div class="card"><div class="lot-head"><h2 id="modal-title">Detalle</h2><button class="btn sm ghost" id="modal-close">Cerrar</button></div><div id="modal-body"></div></div></div>
+<script src="./app.js" defer></script>
+</body></html>

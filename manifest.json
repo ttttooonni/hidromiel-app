@@ -1,0 +1,14 @@
+{
+  "name":"Hidromiel · guía y cuaderno",
+  "short_name":"Hidromiel",
+  "description":"Guía práctica, recetas y cuaderno local de elaboración de hidromiel.",
+  "start_url":"./index.html#inicio",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#17120d",
+  "theme_color":"#17120d",
+  "lang":"es",
+  "icons":[
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
